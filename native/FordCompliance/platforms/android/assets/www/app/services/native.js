@@ -60,19 +60,6 @@ function(ENV, $http, $timeout, $rootScope) {
             } else {
                 successCb(url);
             }
-        },
-
-        fetchTwitterFeed : function(successCb, errorCb) {
-            var twitterAPIurl = "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=";
-            var tweeterURL = twitterAPIurl + "ToGoRightWay" + "&include_rts=1&count=" + 1;
-            var token = "Bearer AAAAAAAAAAAAAAAAAAAAAFKgZAAAAAAAPXUPKPzRDyOnpklUwdjz42hrf5Q%3DTGyzuXGBdIYvaCx4HNvBp1j4fXO4pTSAPkFwWWBj1YnItSM0mf";
-            $http({
-                method : 'GET',
-                url : tweeterURL,
-                headers : {
-                    'Authorization' : token
-                }
-            }).success(successCb, status);
-        }
+      
     };
 }]);
